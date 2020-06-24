@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>spinner</title>
+  <link rel="stylesheet" href="css/jquery-ui.min.css">
+  <script src="js/jquery.js" language="javascript"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(main);
+    function main(){
+          $("#spiner").spinner({
+            min:-10,
+            max:10,
+            //step es para que valla en uno en uno
+            step:1
+          });
+    }
+  </script>
+  <style media="screen">
+
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <label for="spiner">Seleccione un valor</label>
+    <input id="spiner"  name="value">
+  </div>
+</body>
+</html>

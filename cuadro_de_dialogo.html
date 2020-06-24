@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dialog como popmenu</title>
+  <link rel="stylesheet" href="css/jquery-ui.min.css">
+  <script src="js/jquery.js" language="javascript"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(main);
+    function main(){
+      //$("#mensaje").dialog();
+      // podemos ponerle ejectos
+      $("#mensaje").dialog({show:{effect:"blind",duration:1000},
+                            hide:{effect:"explode",duration:1000},
+                            buttons:{
+                            "Continuar":function(){$(this).dialog("close")},
+                            Cancel:function(){$(this).dialog("close")},
+                            Ok:function(){$(this).dialog("close")}},
+                            //modificar el tamaño del cuadro
+                            width:"500px",
+                            //modal es para bloquear la pagina mientras sale el mensaje
+                            modal:true});
+    }
+  </script>
+  <style media="screen">
+
+  </style>
+</head>
+<body>
+  <div id="mensaje" title="Advertencia">
+    <p><span class="ui-icon ui-icon-info" style="float:left, margin-left:3px"></span>
+    El siguiente material contiene material explicito se recomienda discrecion
+    </p>
+</div>
+<p>jpopmenu</p>
+</body>
+</html>

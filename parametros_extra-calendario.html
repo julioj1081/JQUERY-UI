@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Fecha</title>
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <script src="js/jquery.js" language="javascript"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(main);
+    function main(){
+      //$("#datepicker").datepicker();
+      //si queremos los dias del mes anterior y los dias del mes siguiente
+      //$("#datepicker").datepicker({showOtherMonths: true, selectOtherMonths: true});
+
+      //para cambiar el mes y año
+      //$("#datepicker").datepicker({changeMonth: true, changeYear: true});
+
+      //mostrar un pequeño boton para que aparesca el calendario
+      $("#datepicker").datepicker({showOn: "button", buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif", buttonImageOnly:true});
+
+
+      //para poner un rango de dias y meses "un mes y 10 dias"
+      //$("#datepicker").datepicker({minDate: -20, maxDate: "1M +10D"});
+
+      //Mostrar el numero de semanas dentro del calendario
+      //$("#datepicker").datepicker({showWeek: true})
+    }
+    </script>
+  </head>
+  <body>
+    <h1>Ejemplo de dateplahover</h1>
+    <p>fecha<input type="text" id="datepicker"></p>
+  </body>
+</html>

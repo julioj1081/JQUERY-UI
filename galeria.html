@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Galerya de fotos</title>
+  <link rel="stylesheet" href="css/jquery-ui.min.css">
+  <script src="js/jquery.js" language="javascript"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script type="text/javascript">
+    var f = 1;
+    var numFotos = 10;
+    var t;
+    var textos = new Array();
+    textos.push("");
+    textos.push("1. El text");
+    textos.push("2. El edificio");
+    textos.push("3. El apartamento");
+    textos.push("4. El ");
+    textos.push("5. El ");
+    textos.push("6. El ");
+    textos.push("7. El ");
+    textos.push("8. El ");
+    textos.push("9. El ");
+    textos.push("10. El ");
+    $(document).ready(main);
+    function main(){
+      //tiempo en aparecer la foto
+      t = setTimeout(cargarFoto,6000);
+      $("#foto1").html("<img src='img/bola_color.png' width=15px;, height:15;>");
+
+      //pulsadores de circulos
+      $("#foto1,#foto2,#foto3,#foto4,#foto5,#foto6,#foto7,#foto8,#foto9,#foto10").click(cambia);
+      //botones de flechas
+      $("#izq").click(btnizquierda);
+      $("#der").click(btnderecha);
+
+      //desvanecimiento de flechas
+      $("#izq, #der").fadeTo(1000,0.2);
+      //para cuando pase el cursor de la flecha aparesca
+      $("#izq, #der").mouseenter(function(){
+        $(this).fadeTo(500,1);
+      });
+
+      //para que cuando quite el cursor se oculte
+      $("#izq, #der").mouseleave(function(){
+        $(this).fadeTo(500,0.2);
+      });
+      //textos
+      $("#texto").text(textos[f]);
+
+
+    }
+    function cambia(){
+      //primero detenemos el timeout para que despues que cambie se lanze de nuevo el timeout
+      clearTimeout(t);
+      //saber que boton a sido pulsado con el alt
+      f = $(this).attr("alt");
+      //por ejemplo si precionas la foto3 la regresa a la foto2 para que despues carge la foto 3
+      f--;
+      cargarFoto();
+    }
+    function btnderecha(){
+      clearTimeout(t);
+      cargarFoto();
+    }
+    function btnizquierda(){
+      clearTimeout(t);
+      //porque tenemos que regresar 2 pasos 2 atras
+      f -=2;
+      // este if nos permute regresar a la posicision 1 de f
+      if(f<0) f=numFotos-1;
+      cargarFoto();
+    }
+    function cargarFoto(){
+      //incrementamos el indice de f
+      f++;
+      if(f>numFotos)f=1;
+      $("#foto").fadeOut(1000,cambiaFoto);
+    }
+    function cambiaFoto(){
+      //cambio de imageners de puntos
+      for(i=1; i<=numFotos; i++){
+        $("#foto"+i).html("<img src='img/bola_negra.png' width=15px;, height:15;>");
+      }
+      //para que iluminen todas las de color
+      $("#foto"+f).html("<img src='img/bola_color.png' width=15px;, height:15;>");
+
+
+      $("#foto").attr("src","img/foto"+f+".jpg");
+      $("#foto").fadeIn(1000);
+      //tiempo en aparecer la foto
+      t = setTimeout(cargarFoto,6000);
+
+
+      //textos para que no se pierda cuando usemos las flechas
+      $("#texto").text(textos[f]);
+    }
+  </script>
+
+  <style media="screen">
+    body{
+      width: 300px;
+      margin: 100px auto;
+      position: relative;
+    }
+    article{
+
+    }
+    footer{
+      position: absolute;
+      left: 0;
+      top: 350px;
+      background-color: rgba(0,0,0,0.5);
+      width: 300px;
+      height: 50px;
+      color: white;
+    }
+    #foto1,#foto2,#foto3,#foto4,#foto5,#foto6,#foto7,#foto8,#foto9,#foto10{
+      float: left;
+      cursor: pointer;
+      margin: 5px;
+    }
+    #der{
+      cursor: pointer;
+      position: absolute;
+      left: 280px;
+      top: 200px;
+    }
+    #izq{
+      cursor: pointer;
+      position: absolute;
+      left: 0px;
+      top: 200px;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <article>
+      <img id="foto" src="img/foto1.jpg" width="300px" height="400px">
+    </article>
+    <div id="izq"><img src="img/flecha-izquierda.png" width="15px" height="15px"></div>
+    <div id="der"><img src="img/flecha-derecha.png" width="15px" height="15px"></div>
+    <footer>
+      <div id="texto">Texto de las imagenes</div>
+      <div id="foto1" alt="1" ><img src="img/bola_negra.png" width="15px" height="15px"></div>
+      <div id="foto2" alt="2" ><img src="img/bola_negra.png" width="15px" height="15px"></div>
+      <div id="foto3" alt="3" ><img src="img/bola_negra.png" width="15px" height="15px"></div>
+      <div id="foto4" alt="4" ><img src="img/bola_negra.png" width="15px" height="15px"></div>
+      <div id="foto5" alt="5" ><img src="img/bola_negra.png" width="15px" height="15px"></div>
+      <div id="foto6" alt="6" ><img src="img/bola_negra.png" width="15px" height="15px"></div>
+      <div id="foto7" alt="7" ><img src="img/bola_negra.png" width="15px" height="15px"></div>
+      <div id="foto8" alt="8" ><img src="img/bola_negra.png" width="15px" height="15px"></div>
+      <div id="foto9" alt="9" ><img src="img/bola_negra.png" width="15px" height="15px"></div>
+      <div id="foto10" alt="10" ><img src="img/bola_negra.png" width="15px" height="15px"></div>
+</footer>
+  </section>
+</body>
+</html>

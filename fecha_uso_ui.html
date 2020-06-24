@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Fecha</title>
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <script src="js/jquery.js" language="javascript"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(main);
+    function main(){
+      //$("#datepicker").datepicker();
+      //si queremos los dias del mes anterior y los dias del mes siguiente
+      $("#datepicker").datepicker({showOtherMonths: true, selectOtherMonths: true});
+
+    }
+    </script>
+  </head>
+  <body>
+    <h1>Ejemplo de dateplahover</h1>
+    <p>fecha<input type="text" id="datepicker"></p>
+  </body>
+</html>

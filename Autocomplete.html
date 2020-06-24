@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Acordeon</title>
+  <link rel="stylesheet" href="css/jquery-ui.min.css">
+  <script src="js/jquery.js" language="javascript"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script type="text/javascript">
+  var dioses = ["Zeus", "Hera", "Poseidon","Hadez","Hermes","Afrodita","Atenea","Artemisa","Hestia",
+                "Demeter","Dionisio","Hercules","Jesus"];
+    $(document).ready(main);
+    function main(){
+      $("#olimpicos").autocomplete({source:dioses});
+    }
+
+  </script>
+  <style media="screen">
+
+
+  </style>
+</head>
+<body>
+  <input type="text" id="olimpicos">
+  <p>Escribe un dios</p>
+</body>
+</html>

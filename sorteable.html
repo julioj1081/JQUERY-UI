@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sortable</title>
+  <link rel="stylesheet" href="css/jquery-ui.min.css">
+  <script src="js/jquery.js" language="javascript"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(main);
+    function main(){
+      $("ul").sortable();
+    }
+
+  </script>
+  <style media="screen">
+    ul{
+      list-style: none;
+    }
+    li{
+      border: 1px solid #000;
+      width: 200px;
+      height: 30px;
+    }
+
+  </style>
+</head>
+<body>
+  <p>selecciona prioridad de cada cuadro arrastrandolo</p>
+
+  <ul>
+    <li>Zeus</li>
+    <li>Poseidon</li>
+    <li>Afrodita</li>
+    <li>Atenea</li>
+    <li>Apolo</li>
+    <li>Hadez</li>
+  </ul>
+</body>
+</html>

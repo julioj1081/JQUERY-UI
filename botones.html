@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Botones</title>
+  <link rel="stylesheet" href="css/jquery-ui.min.css">
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/jquery.js" language="javascript"></script>
+  <script type="text/javascript">
+    $(document).ready(main);
+    function main(){
+      //para poner un icono
+      $("button").button({icons:{primary: "ui-icon-locked"}});
+      $("a").button({icons:{primary: "ui-icon-locked"}});
+      $("input[type=submit]").button({icons:{primary: "ui-icon-locked"}});
+    }
+
+  </script>
+  <style media="screen">
+
+  </style>
+</head>
+<body>
+  <button type="button" name="button">Hola</button>
+  <a href="#">Hola soy un link</a>
+  <input type="submit" name="" value="boton de submit">
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Spinner</title>
+  <link rel="stylesheet" href="css/jquery-ui.min.css">
+  <script src="js/jquery.js" language="javascript"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(main);
+    function main(){
+      $("#generaciones").tabs();
+    }
+  </script>
+  <style media="screen">
+    #generaciones{
+      width: 800px;
+      margin: 0 auto;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div id="generaciones">
+    <ul>
+      <li><a href="#primera">Primera generacion</a></li>
+      <li><a href="#segunda">Segunda generacion</a></li>
+      <li><a href="#tercera">Tercera generacion</a></li>
+    </ul>
+
+    <div id="primera">
+      <p>Primera</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia aspernatur ad totam perferendis molestias accusamus laboriosam est atque beatae quas libero recusandae quae, perspiciatis adipisci velit laudantium natus. Totam, eum.</p>
+    </div>
+
+    <div id="segunda">
+      <p>Segunda</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia aspernatur ad totam perferendis molestias accusamus laboriosam est atque beatae quas libero recusandae quae, perspiciatis adipisci velit laudantium natus. Totam, eum.</p>
+    </div>
+
+    <div id="tercera">
+      <p>Tercera</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia aspernatur ad totam perferendis molestias accusamus laboriosam est atque beatae quas libero recusandae quae, perspiciatis adipisci velit laudantium natus. Totam, eum.</p>
+    </div>
+  </div>
+</body>
+</html>
